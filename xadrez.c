@@ -1,11 +1,12 @@
 #include <stdio.h>
 
 // Desafio de Xadrez - MateCheck
-// Este código simula a movimentação de três peças de xadrez.
-// No nível novato, usei estruturas de repetição para movimentar o Bispo, a Torre e a Rainha.
+// Este código simula a movimentação de peças de xadrez.
+// No nível novato, usei estruturas de repetição para o Bispo, a Torre e a Rainha.
+// No nível aventureiro, adicionei o movimento do Cavalo usando loops aninhados.
 
 int main() {
-    // Nível Novato - Movimentação das Peças
+    // ===== NÍVEL NOVATO - MOVIMENTAÇÃO DAS PEÇAS =====
 
     // Aqui eu defini a quantidade de casas que cada peça vai andar.
     const int casasBispo = 5;
@@ -14,7 +15,7 @@ int main() {
 
     int i;
 
-    // Implementação de Movimentação do Bispo
+    // ===== MOVIMENTO DO BISPO =====
     // O Bispo anda 5 casas na diagonal superior direita.
     // Para representar a diagonal, imprimo duas direções: Cima e Direita.
     printf("===== Movimento do Bispo =====\n");
@@ -27,7 +28,7 @@ int main() {
 
     printf("\n");
 
-    // Implementação de Movimentação da Torre
+    // ===== MOVIMENTO DA TORRE =====
     // A Torre anda 5 casas para a direita.
     printf("===== Movimento da Torre =====\n");
 
@@ -37,7 +38,7 @@ int main() {
 
     printf("\n");
 
-    // Implementação de Movimentação da Rainha
+    // ===== MOVIMENTO DA RAINHA =====
     // A Rainha anda 8 casas para a esquerda.
     printf("===== Movimento da Rainha =====\n");
 
@@ -46,6 +47,27 @@ int main() {
         printf("Esquerda\n");
         i++;
     } while (i <= casasRainha);
+
+    printf("\n");
+
+    // ===== NÍVEL AVENTUREIRO - MOVIMENTAÇÃO DO CAVALO =====
+
+    // O Cavalo anda em formato de L.
+    // Neste desafio, ele anda duas casas para baixo e uma casa para a esquerda.
+    // Usei loops aninhados: um for por fora e um while por dentro.
+
+    printf("===== Movimento do Cavalo =====\n");
+
+    for (int movimentoVertical = 1; movimentoVertical <= 2; movimentoVertical++) {
+        printf("Baixo\n");
+
+        int movimentoHorizontal = 1;
+
+        while (movimentoVertical == 2 && movimentoHorizontal <= 1) {
+            printf("Esquerda\n");
+            movimentoHorizontal++;
+        }
+    }
 
     return 0;
 }
